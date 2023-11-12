@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Watch-List</title>
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point&display=swap" rel="stylesheet">
+</head>
+<body>
+  <img src="img/showtime.png">
+  <h2>A place to keep all of the movies/shows that you have been waiting to watch!</h2>
+
+  <form action="/shows" method="POST">
+    <input type="text" placeholder="Name of Show" name="name">
+    <button type="submit">Submit</button>
+  </form>
+<!-- loop through all messages -->
+<div class="watchList">
+  <div class="row">
+    <div class="column">
+      <div class="listOne">
+        <h3>Watch-List</h3>
+        <ul id="showsToWatch">
+          <% for(var i=0; i<shows.length; i++) {%> 
+            <!-- this conditional will show if the li has a class of complete or not complete -->
+            <li class="<%= shows[i].watched ? 'complete' : 'notComplete' %>">
+              <span><%= shows[i].name %></span>
+              <!-- <span><%= shows[i].watched %></span> -->
+              <span><i class="fa fa-solid fa-check" aria-hidden="true"></i></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="listTwo">
+        <h3>Finished Watching</h3>
+        <ul id="showsWatched">
+          <% for (var i = 0; i < shows.length; i++) { %>
+              <% if (shows[i].watched) { %>
+              <li class="complete">
+                <span><%= shows[i].name %></span>
+                <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+              </li>
+            <% } %>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- Close the row after the second column -->
+
+  <div>
+  </div>
+
+</div>
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>

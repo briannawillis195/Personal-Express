@@ -1,0 +1,86 @@
+
+*{
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Sulphur Point;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background-image: url("https://i.postimg.cc/bJJr5Bnh/background.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h2{
+  font-size: 2.5rem;
+  color: lightgray;
+}
+
+h3{
+  font-size: 2.3rem;
+  color: lightgray;
+  text-decoration: underline;
+}
+
+li{
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+input{
+  width: 40%;
+  border-radius: 30px;
+  height: 25px;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  color: white;
+}
+
+button{
+  border-radius: 30px;
+  width: 100px;
+  height: 25px;
+  background-color: transparent;
+  color: lightgray;
+  border: 1px solid lightgray;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+
+}
+
+.listOne{
+
+
+}
+
+.listTwo li{
+  list-style: none;
+
+}
+
+.notComplete, .completedShows{
+  list-style: none;
+}
+
+#showsToWatch > .complete{
+  display: none;
+}
+
